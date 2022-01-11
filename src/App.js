@@ -18,25 +18,25 @@ function App() {
       id: 'e3',
       title: 'House Rent',
       amount: 12200,
-      date: new Date(2021, 12, 15)
+      date: new Date(2021, 11, 15)
     },
     {
       id: 'e4',
       title: 'Mobile Recharge',
       amount: 1200,
-      date: new Date(2022, 1, 10)
+      date: new Date(2022, 0, 10)
     },
     {
       id: 'e5',
       title: 'Tatasky Recharge',
       amount: 600,
-      date: new Date(2022, 1, 10)
+      date: new Date(2022, 0, 10)
     },
     {
       id: 'e6',
       title: 'Indane Gas Booking',
       amount: 903,
-      date: new Date(2022, 1, 11)
+      date: new Date(2022, 0, 11)
     }
   ];
   return (
