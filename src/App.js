@@ -10,7 +10,7 @@ function App() {
     },
     {
       id: 'e2',
-      title: 'Tution Fees',
+      title: "Ayushmaan's Tution Fees",
       amount: 6000,
       date: new Date(2021, 7, 22)
     },
@@ -18,19 +18,25 @@ function App() {
       id: 'e3',
       title: 'House Rent',
       amount: 12200,
-      date: new Date(2021, 8, 25)
+      date: new Date(2021, 11, 15)
     },
     {
       id: 'e4',
       title: 'Mobile Recharge',
       amount: 1200,
-      date: new Date(2021, 9, 26)
+      date: new Date(2022, 0, 10)
     },
     {
       id: 'e5',
       title: 'Tatasky Recharge',
       amount: 600,
-      date: new Date(2021, 10, 10)
+      date: new Date(2022, 0, 10)
+    },
+    {
+      id: 'e6',
+      title: 'Indane Gas Booking',
+      amount: 903,
+      date: new Date(2022, 0, 11)
     }
   ];
   return (
