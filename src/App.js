@@ -44,10 +44,10 @@ function App() {
   ];
   return (
     <div>
-      <h2>Hi, Pradeep</h2>
-      <p>Let's start the Expense App in ReactJS</p>
       <NewExpense />
       <Expenses items={expenses}/>
+      <h2>Hi, Pradeep</h2>
+      <p>Let's start the Expense App in ReactJS</p>
     </div>
   );
 }
