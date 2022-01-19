@@ -42,9 +42,15 @@ function App() {
       date: new Date(2022, 0, 11)
     }
   ];
+
+  const addExpenseHandler = (expense) => {
+
+    console.log(expense);
+  }
+
   return (
     <div>
-      <NewExpense />
+      <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
       <h2>Hi, Pradeep</h2>
       <p>Let's start the Expense App in ReactJS</p>
