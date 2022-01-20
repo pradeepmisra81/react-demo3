@@ -1,52 +1,62 @@
-import React from "react";
+import React, {useState} from "react";
 
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
 
-function App() {
-  const expenses = [
-    {
-      id: 'e1',
-      title: 'Kitchen Item',
-      amount: 10000,
-      date: new Date(2021, 6, 20)
-    },
-    {
-      id: 'e2',
-      title: "Ayushmaan's Tution Fees",
-      amount: 6000,
-      date: new Date(2021, 7, 22)
-    },
-    {
-      id: 'e3',
-      title: 'House Rent',
-      amount: 12200,
-      date: new Date(2021, 11, 15)
-    },
-    {
-      id: 'e4',
-      title: 'Mobile Recharge',
-      amount: 1200,
-      date: new Date(2022, 0, 10)
-    },
-    {
-      id: 'e5',
-      title: 'Tatasky Recharge',
-      amount: 600,
-      date: new Date(2022, 0, 10)
-    },
-    {
-      id: 'e6',
-      title: 'Indane Gas Booking',
-      amount: 903,
-      date: new Date(2022, 0, 11)
-    }
-  ];
+const STATIC_EXPENSES = [
+  {
+    id: 'e1',
+    title: 'Kitchen Item',
+    amount: 10000,
+    date: new Date(2021, 6, 20)
+  },
+  {
+    id: 'e2',
+    title: "Ayushmaan's Tution Fees",
+    amount: 6000,
+    date: new Date(2021, 7, 22)
+  },
+  {
+    id: 'e3',
+    title: 'House Rent',
+    amount: 12200,
+    date: new Date(2021, 11, 15)
+  },
+  {
+    id: 'e4',
+    title: 'Mobile Recharge',
+    amount: 1200,
+    date: new Date(2022, 0, 10)
+  },
+  {
+    id: 'e5',
+    title: 'Tatasky Recharge',
+    amount: 600,
+    date: new Date(2022, 0, 10)
+  },
+  {
+    id: 'e6',
+    title: 'Indane Gas Booking',
+    amount: 903,
+    date: new Date(2022, 0, 11)
+  },
+];
+
+const App = () => {
+
+  const [expenses,setExpenses] = useState(STATIC_EXPENSES);
 
   const addExpenseHandler = (expense) => {
 
-    console.log(expense);
-  }
+    setExpenses((prevExpenses) => {
+      let updatedExpenses = [...prevExpenses,expense];
+      //console.log("In setExpenses\n");
+      //console.log(updatedExpenses);
+      return updatedExpenses;
+    });
+  };
+
+  //console.log(expenses);
 
   return (
     <div>
@@ -56,6 +66,6 @@ function App() {
       <p>Let's start the Expense App in ReactJS</p>
     </div>
   );
-}
+};
 
 export default App;
