@@ -60,6 +60,7 @@ const App = () => {
 
   return (
     <div>
+      <p>Let's use the below form to add new expense at bottom of the below Expense List</p>
       <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
       <h2>Hi, Pradeep</h2>
