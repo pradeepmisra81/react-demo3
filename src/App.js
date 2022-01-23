@@ -49,7 +49,7 @@ const App = () => {
   const addExpenseHandler = (expense) => {
 
     setExpenses((prevExpenses) => {
-      let updatedExpenses = [...prevExpenses,expense];
+      let updatedExpenses = [expense,...prevExpenses];
       //console.log("In setExpenses\n");
       //console.log(updatedExpenses);
       return updatedExpenses;
@@ -60,7 +60,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Let's use the below form to add new expense at bottom of the below Expense List</p>
+      <p>Let's use the below form to add new expense in the Expense List below the form</p>
       <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
       <h2>Hi, Pradeep</h2>
