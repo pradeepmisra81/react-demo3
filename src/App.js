@@ -8,13 +8,13 @@ const STATIC_EXPENSES = [
     id: 'e1',
     title: 'Kitchen Item',
     amount: 10000,
-    date: new Date(2021, 6, 20)
+    date: new Date(2019, 6, 20)
   },
   {
     id: 'e2',
     title: "Ayushmaan's Tution Fees",
     amount: 6000,
-    date: new Date(2021, 7, 22)
+    date: new Date(2020, 7, 22)
   },
   {
     id: 'e3',
@@ -60,7 +60,7 @@ const App = () => {
 
   return (
     <div>
-      <p>Let's use the below form to add new expense in the Expense List below the form</p>
+      <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler}/>
       <Expenses items={expenses}/>
       <h2>Hi, Pradeep</h2>
