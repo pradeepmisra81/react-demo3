@@ -7,6 +7,8 @@ const ExpenseForm = (props) => {
     const [enteredTitle, setEnteredTitle] = useState('');
     const [enteredAmount, setEnteredAmount] = useState('');
     const [enteredDate, setEnteredDate] = useState('');
+    const [isValidTitle, setIsValidTitle] = useState(true);
+    const [isValidAmount, setIsValidAmount] = useState(true);
 
     const titleChangeHandler = (event) => {
         setEnteredTitle(event.target.value);
@@ -23,6 +25,15 @@ const ExpenseForm = (props) => {
     const submitHandler = (event) => {
         event.preventDefault();
 
+        if (enteredTitle.trim().length === 0 ) {
+            setIsValidTitle(false);
+            return;
+        }
+
+        if (enteredAmount.trim().length === 0 ) {
+            setIsValidAmount(false);
+            return;
+        }
         //const amountNum = Math.floor(enteredAmount);
         const expenseData = {
             title: enteredTitle,
@@ -43,7 +54,7 @@ const ExpenseForm = (props) => {
     <form onSubmit={submitHandler}>
         <div className="new-expense__controls">
             <div className="new-expense__control">
-                <label>Title</label>
+                <label style={{color: !isValidTitle ? "red":"black"}}>Title</label>
                 <input 
                 type='text' 
                 value={enteredTitle}
@@ -53,7 +64,7 @@ const ExpenseForm = (props) => {
                 />
             </div>
             <div className="new-expense__control">
-                <label>Amount</label>
+                <label style={{color: !isValidAmount ? "red":"black"}}>Amount</label>
                 <input 
                 type='number' 
                 min="0.01" 
