@@ -47,6 +47,8 @@ const ExpenseForm = (props) => {
                 <input 
                 type='text' 
                 value={enteredTitle}
+                maxLength={50}
+                placeholder="Enter title"
                 onChange={titleChangeHandler}
                 />
             </div>
@@ -57,6 +59,9 @@ const ExpenseForm = (props) => {
                 min="0.01" 
                 step="0.01" 
                 value={enteredAmount}
+                max="10000000.00"
+                pattern="[+-]?\d+(?:[.,]\d+)?"
+                placeholder="Enter amount"
                 onChange={amountChangeHandler}
                 />
             </div>
