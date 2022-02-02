@@ -9,7 +9,10 @@ function ExpenseItem(props) {
     const [title, setTitle] = useState(props.title);
 
     const clickHandler = () => {
-        setTitle("Updated !");
+        const enteredNewTitle = prompt('Please enter new title of this expense item');
+        if (enteredNewTitle !== null && enteredNewTitle.length > 0) {
+        setTitle(enteredNewTitle);
+        }
     }
 
     return (
@@ -19,7 +22,10 @@ function ExpenseItem(props) {
             <h2>{title}</h2>
             <div className="expense-item__price">Rs. {props.amount}</div>
             </div>
-            <button onClick={clickHandler}>Change Title</button>
+            <div className="edit-expense button">
+            <button type="button" onClick={clickHandler}>Update Epense Title</button>
+            </div>
+            
         </Card>
     );
 }

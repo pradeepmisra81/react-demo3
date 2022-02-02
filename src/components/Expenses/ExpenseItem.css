@@ -35,6 +35,35 @@
   border-radius: 12px;
 }
 
+
+.edit-expense button {
+  font: inherit;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  border: 1px solid yellow;
+  background-color: yellow;
+  color: black;
+  border-radius: 12px;
+  margin-right: 1rem;
+}
+
+.edit-expense button:hover,
+.edit-expense button:active {
+  background-color: yellowgreen;
+  border-color: yellowgreen;
+}
+
+.edit-expense button.alternative {
+  color: #220131;
+  border-color: transparent;
+  background-color: transparent;
+}
+
+.edit-expense button.alternative:hover,
+.edit-expense button.alternative:active {
+  background-color: #e3f8b3;
+}
+
 @media (min-width: 580px) {
   .expense-item__description {
     flex-direction: row;
