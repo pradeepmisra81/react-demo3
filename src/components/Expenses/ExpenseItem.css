@@ -44,7 +44,7 @@
   background-color: yellow;
   color: black;
   border-radius: 12px;
-  margin-right: 1rem;
+  margin-left: 1rem;
 }
 
 .edit-expense button:hover,
