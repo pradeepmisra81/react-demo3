@@ -13,7 +13,11 @@ function ExpenseItem(props) {
         if (enteredNewTitle !== null && enteredNewTitle.length > 0) {
         setTitle(enteredNewTitle);
         }
-    }
+    };
+
+    const deleteItemHandler = () => {
+        
+    };
 
     return (
         <Card className="expense-item">
@@ -24,6 +28,9 @@ function ExpenseItem(props) {
             </div>
             <div className="edit-expense button">
             <button type="button" onClick={clickHandler}>Update Title</button>
+            </div>
+            <div className="delete-expense button">
+            <button type="button" onClick={deleteItemHandler}>Delete</button>
             </div>
             
         </Card>
