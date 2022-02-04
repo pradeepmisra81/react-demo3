@@ -16,8 +16,14 @@ function ExpenseItem(props) {
     };
 
     const deleteItemHandler = () => {
-        
+        const deletedItemId = props.keyId;
+        console.log("props.key 3: ");
+        console.log(deletedItemId);
+        props.onDelete(deletedItemId);
     };
+
+    console.log("props 1: ");
+    console.log(props);
 
     return (
         <Card className="expense-item">
@@ -30,7 +36,7 @@ function ExpenseItem(props) {
             <button type="button" onClick={clickHandler}>Update Title</button>
             </div>
             <div className="delete-expense button">
-            <button type="button" onClick={deleteItemHandler}>Delete</button>
+            <button type="button" onClick={deleteItemHandler}>Delete-{props.keyId}</button>
             </div>
             
         </Card>

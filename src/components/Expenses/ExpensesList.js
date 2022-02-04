@@ -8,13 +8,21 @@ const ExpensesList = (props) => {
         return <h2 className="expenses-list__fallback">No expenses found.</h2>
     };
 
+    const deleteHandler = (item) => {
+        props.onDeleteItem(item);
+        console.log("item to be deleted: ");
+        console.log(item);
+    };
+
     return <ul className="expenses-list">
-        {props.items.map((expense) => (
+        {props.items.map((expense) => (  
         <ExpenseItem 
         key={expense.id}
+        keyId={expense.id}
         title={expense.title}
         amount={expense.amount}
         date={expense.date}
+        onDelete={deleteHandler}
         />
         ))}
     </ul>
