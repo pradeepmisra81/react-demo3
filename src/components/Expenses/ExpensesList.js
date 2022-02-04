@@ -10,8 +10,6 @@ const ExpensesList = (props) => {
 
     const deleteHandler = (item) => {
         props.onDeleteItem(item);
-        console.log("item to be deleted: ");
-        console.log(item);
     };
 
     return <ul className="expenses-list">
