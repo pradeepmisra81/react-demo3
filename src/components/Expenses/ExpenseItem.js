@@ -17,7 +17,7 @@ function ExpenseItem(props) {
 
     const deleteItemHandler = () => {
         const deletedItemId = props.keyId;
-        console.log("props.key 3: ");
+        console.log("props.key: ");
         console.log(deletedItemId);
         props.onDelete(deletedItemId);
     };

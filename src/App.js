@@ -50,19 +50,22 @@ const App = () => {
 
     setExpenses((prevExpenses) => {
       let updatedExpenses = [expense,...prevExpenses];
-      //console.log("In setExpenses\n");
-      //console.log(updatedExpenses);
       return updatedExpenses;
     });
   };
 
-  //console.log(expenses);
+  const deleteExpenseHandler = expenseId => {
+    setExpenses(prevExpenses => {
+      const updatedExpenses = prevExpenses.filter(expense => expense.id !== expenseId);
+      return updatedExpenses;
+    });
+  };
 
   return (
     <div>
       <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses items={expenses}/>
+      <Expenses items={expenses} onDeleteExpense={deleteExpenseHandler}/>
       <h2>Hi, Pradeep</h2>
       <p>Let's start the Expense App in ReactJS</p>
     </div>
