@@ -61,11 +61,27 @@ const App = () => {
     });
   };
 
+  const updateExpenseTitleHandler = ( expenseId, newTitle ) => {
+    setExpenses(prevExpenses => {
+      console.log("prevExpenses:");
+      console.log(prevExpenses);
+      const updatedExpenses = prevExpenses.map((expense) => {
+         if(expense.id === expenseId) {
+          expense.title = newTitle;
+         }
+        return expense; 
+      });
+      console.log("updatedExpenses:");
+      console.log(updatedExpenses);
+      return updatedExpenses;
+    });
+  };
+
   return (
     <div>
       <h1>Expense Tracker</h1>
       <NewExpense onAddExpense={addExpenseHandler}/>
-      <Expenses items={expenses} onDeleteExpense={deleteExpenseHandler}/>
+      <Expenses items={expenses} onUpdateTitleAppjs={updateExpenseTitleHandler} onDeleteExpense={deleteExpenseHandler}/>
       <h2>Hi, Pradeep</h2>
       <p>Let's start the Expense App in ReactJS</p>
     </div>

@@ -5,13 +5,13 @@ import './ExpenseItem.css';
 
 function ExpenseItem(props) {
 
-    //let title = props.title;
     const [title, setTitle] = useState(props.title);
 
     const clickHandler = () => {
         const enteredNewTitle = prompt('Please enter new title of this expense item');
         if (enteredNewTitle !== null && enteredNewTitle.length > 0) {
-        setTitle(enteredNewTitle);
+            setTitle(enteredNewTitle);
+            props.onUpdateTitle( props.keyId, enteredNewTitle );
         }
     };
 

@@ -12,6 +12,10 @@ const ExpensesList = (props) => {
         props.onDeleteItem(item);
     };
 
+    const updateTitleHandler = ( expenseId, updatedTitle ) => {
+        props.onUpdateTitle( expenseId, updatedTitle );
+    };
+
     return <ul className="expenses-list">
         {props.items.map((expense) => (  
         <ExpenseItem 
@@ -21,6 +25,7 @@ const ExpensesList = (props) => {
         amount={expense.amount}
         date={expense.date}
         onDelete={deleteHandler}
+        onUpdateTitle={updateTitleHandler}
         />
         ))}
     </ul>

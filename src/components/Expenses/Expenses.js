@@ -17,19 +17,13 @@ function Expenses(props) {
       props.onDeleteExpense(itemId);
     }
 
+    const updateTitleHandlerExpenses = ( expenseId, newTitle ) => {
+      props.onUpdateTitleAppjs( expenseId, newTitle );
+    }
+
     const filteredExpenses = props.items.filter((expense) => {
       return expense.date.getFullYear().toString() === filteredYear;
     });
-
-    // return (
-    //     <div>
-    //     <Card className='expenses'>
-    //     <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-    //     <ExpensesChart expenses={updatedExpensesAfterDeletion}/>
-    //     <ExpensesList items={updatedExpensesAfterDeletion} onDeleteItem={deleteExpenseItemHandler}/>
-    //   </Card>
-    //   </div>
-    // );
 
     return (
       <div>
@@ -39,7 +33,7 @@ function Expenses(props) {
           onChangeFilter={filterChangeHandler}
         />
       <ExpensesChart expenses={filteredExpenses}/>
-      <ExpensesList items={filteredExpenses} onDeleteItem={deleteExpenseItemHandler}/>
+      <ExpensesList items={filteredExpenses} onUpdateTitle={updateTitleHandlerExpenses} onDeleteItem={deleteExpenseItemHandler}/>
     </Card>
     </div>
   );
