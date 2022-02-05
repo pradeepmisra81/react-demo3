@@ -63,16 +63,12 @@ const App = () => {
 
   const updateExpenseTitleHandler = ( expenseId, newTitle ) => {
     setExpenses(prevExpenses => {
-      console.log("prevExpenses:");
-      console.log(prevExpenses);
       const updatedExpenses = prevExpenses.map((expense) => {
          if(expense.id === expenseId) {
           expense.title = newTitle;
          }
         return expense; 
       });
-      console.log("updatedExpenses:");
-      console.log(updatedExpenses);
       return updatedExpenses;
     });
   };
